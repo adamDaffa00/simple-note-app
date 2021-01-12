@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="recycle-bin.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <title> notes </title>
+  <script defer src="component/note-item.js" type='text/javascript' charset="utf-8"></script>
+  <script defer src="component/note-list.js" type='text/javascript' charset="utf-8"></script>
+  <script defer src="component/note-modal.js" type='text/javascript' charset="utf-8"></script>
+  <script defer src="component/empty-list.js" type='text/javascript' charset="utf-8"></script>
+  <script defer src="data-localstorage.js" type='text/javascript' charset="utf-8"></script>
+  <script defer src='recycle-bin.js' type="text/javascript" charset="utf-8"></script>
+  <script defer src="script.js" type='text/javascript' charset="utf-8"></script>
+</head>
+<body>
+  <div class="container">
+      <nav class="navbar">
+       <input type="search" name="search" placeholder="cari catatan yang dibuang" class="search" id="search">
+      </nav>
+      <div class="back">
+        <a href="index.html"> <i class="fas fa-arrow-circle-left"></i> </a>
+      </div>
+      <empty-list class="empty-list">
+      </empty-list>
+      <section class="list-note list-note-trash hide-list-note">
+        <note-list>
+        </note-list>
+      </section>
+  </div>
+</body>
+</html>

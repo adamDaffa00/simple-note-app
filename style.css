@@ -1,0 +1,304 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500&display=swap');
+html{
+  --light-color: #fff;
+  --premire-color: #3a5198;
+  --transparent-color: rgba(0,0,0,.5);
+  --dark-color: #0f1f38;
+  font-family: 'Raleway',sans-serif;
+}
+*:before,*:after,*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+textarea {
+  box-sizing: border-box;
+  resize: none;
+}
+a{
+  color: var(--premire-color);
+}
+button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: block;
+}
+.container{
+  max-height: 100vh;
+  overflow: scroll;
+}
+.container .navbar {
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid var(--premire-color);
+}
+.navbar .menu{
+  position: absolute;
+  top: 80px;
+  padding: 3rem 2rem;
+  width: 50vw;
+  height: 100vh;
+  background: #fff;
+  transform: translatex(-100%);
+  transition: .3s;
+  z-index: 99;
+}
+.navbar .toggle-menu{
+  transform: translatex(0%);
+}
+
+.menu .navigation a{
+  font-size: 1.5rem;
+  padding: .3rem 0;
+  display: block;
+}
+
+.menu .tags{
+  padding: 1rem;
+  
+}
+.menu .tags a{
+  font-size: 1.3rem;
+  padding: .3rem 0;
+  display: block;
+}
+
+
+.navbar .search{
+  flex: 1;
+  border: 2px solid var(--premire-color);
+  height: 2.3rem;
+  display: block;
+  padding: 0 .7rem;
+  font-size: 1rem;
+}
+.navbar .search,.navbar .hamburger-menu,.navbar .add{
+  margin: 0 .5rem;
+}
+
+.navbar .add{
+  background-color: var(--premire-color);
+  padding: .6rem .7rem;
+  color: var(--light-color);
+}
+
+.hamburger-menu i{
+  font-size: 2.3rem;
+  color: var(--premire-color);
+}
+
+.list-note{
+  overflow: scroll;
+}
+.list-note li{
+  display: block;
+  position: relative;
+  padding: 1rem 1.2rem;
+  border-bottom: .5px solid var(--premire-color);
+}
+
+.list-note .delete-list{
+  display: none;
+}
+.list-note li > p{
+  white-space: nowrap;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: .6rem 0;
+}
+.list-note li > button{
+  color: var(--premire-color);
+  padding: 0 0;
+  font-size: 1rem;
+  background: none;
+}
+.list-note li .edit-note{
+  position: absolute;
+  top: 1rem;
+  right: 1.2rem;
+  
+}
+.edit-note button {
+  background: none;
+  font-size: 1.3rem;
+  color: var(--premire-color);
+}
+
+/* empty list */
+.empty-list{
+  width: 100vw;
+  height: calc(100vh - 80px);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgba(0,0,0,.3);
+}
+.hide-empty-list{
+  display: none;
+}
+
+/* modal field section */
+.modal-field-section{
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  background: #fff;
+  transform: translatex(-50%);
+  width: 60vw;
+  overflow: scroll;
+  max-height: 90vh;
+  display: none;
+  opacity: 0;
+  padding: 1.5rem;
+  transition: .5s;
+}
+.modal-field-section .field-topbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  border: 2px solid var(--premire-color);
+  padding: 0 15px;
+  background: var(--premire-color);
+}
+.modal-field-section .field-text{
+  border: 2px solid var(--premire-color);
+  border-top: none;
+}
+.field-topbar button{
+ background: none;
+ display: inline;
+}
+.field-topbar i{
+  color: var(--light-color);
+  font-size: 1.2rem;
+}
+.field-text .title{
+  width: 100%;
+  padding: 1.2rem 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  color: var(--premire-color);
+  font-weight: 700;
+}
+.field-text #textarea{
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: var(--transparent-color);
+}
+.field-topbar .setting-icon i{
+  margin-left: 1rem;
+  color: var(--light-color);
+}
+
+
+.note-content-modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 95vw;
+  background-color: var(--light-color);
+  z-index: 200;
+  height: 90vh;
+  transform: translate(-50%,-50%);
+  border: 3px solid var(--dark-color);
+  overflow: scroll;
+  opacity: 0;
+  transition: .7s;
+  display: none;
+}
+/* class yang sama digunakan pada element modal field */
+.show-modal {
+  opacity: 1;
+  display: block;
+}
+.note-content-modal .modal-topbar{
+  width: 100%;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  background: var(--dark-color);
+}
+.modal-topbar button{
+  background: none;
+  font-size: 1.3rem;
+  color: var(--light-color);
+}
+.note-content-modal .note-title,.note-content-modal .note-content{
+  border: none;
+  display: block;
+  outline: none;
+}
+.note-content-modal .note-title{
+  padding: 0 .8rem;
+  height: 60px;
+  width: 100%;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--dark-color);
+  border-bottom: 2px solid var(--dark-color);
+}
+.note-content-modal .note-title:disabled,.note-content-modal .note-content:disabled {
+  background: var(--light-color);
+}
+.note-content-modal .note-content{
+  padding: .7rem .8rem;
+  width: 100%;
+  font-size: 1.2rem;
+  line-height: 1.5;
+  height: 100vh;
+}
+
+/* recycle bin */
+.back{
+  position: fixed;
+  left: 15vmin;
+  bottom: 7vh;
+  z-index: 999;
+  background: #fff;
+  border-radius: 50%;
+}
+.back a{
+  padding: .3rem;
+  display: block;
+  background: none;
+  color: var(--premire-color);
+  font-size: 2.8rem;
+}
+
+
+@media screen and (max-width: 576px){
+  .list-note li h2{
+   font-size: 1.4rem;
+  }
+  .list-note li p{
+   font-size: 1rem;
+  }
+
+  .add span{
+    display: none;
+  }
+  .add i{
+    font-size: 1rem;
+  }
+  .navbar .menu{
+    width: 100vw;
+  } 
+  .modal-field-section{
+  width: 100vw;
+  }
+}

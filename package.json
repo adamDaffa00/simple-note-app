@@ -1,0 +1,11 @@
+{
+  "name": "note-app",
+  "version": "1.0.0",
+  "description": "aplikasi catatan sederhana yang memanfaatkan realtime database dari fitrbase sebagai penyimpanan data'",
+  "main": "index.js",
+  "scripts": {
+    "test": "http-server"
+  },
+  "author": "Adam daffa",
+  "license": "MIT"
+}

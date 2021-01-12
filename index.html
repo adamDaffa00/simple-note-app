@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+  <title> notes </title>
+  
+  <!-- vue -->
+
+  <script defer src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <script defer src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.1.0/uuidv4.min.js"></script>
+  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script defer src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script defer src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+  
+  
+  
+  <script defer src="firebase.js" type="text/javascript" charset="utf-8"></script>
+
+  <script defer src="component.js" type='text/javascript' charset="utf-8"></script>
+  <!--  <script defer src="data-localstorage.js" type='text/javascript' charset="utf-8"></script>-->
+  <script defer src="router.js" type="text/javascript" charset="utf-8"></script>
+  <script defer src="index.js" type='text/javascript' charset="utf-8"></script>
+  <script defer src="script.js" type='text/javascript' charset="utf-8"></script>
+</head>
+<body>
+  <div class="container">
+    <router-view v-on:appear-field="showTextField" v-on:detail-note="modalDetail" v-on:add-note='addNote' v-on:hapus-list="clearNote" v-on:hide-textfield="cancel" v-bind:notes="notes">
+    </router-view>
+    <template v-if="modalContent">
+      <detail-note v-bind:note="modalContent" class="note-content-modal show-modal">
+      </detail-note>
+    </template> 
+  </div>
+</body>
+</html>
