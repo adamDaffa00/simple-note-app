@@ -49,13 +49,13 @@ const recycleBin = {
     },
     deleteNote(id){
      const deletedNote = this.getNote();
-     alert('note deleted');
      deletedNote.forEach((note,index) => {
        if(note.id === id) {
          deletedNote.splice(index,1);
        }
      });
      localStorage.setItem('note-deleted',JSON.stringify(deletedNote));
+     this.displayDeletedNote();
     }
   }
 };
@@ -94,9 +94,11 @@ const renderData = {
    render(){
       const id = this.$route.params.id;
       const deletedNote = this.getNote();    
-      const selectedId = deletedNote.filter(note => note.id == id);
-      console.log(deletedNote);
-      console.log(selectedId);
+      deletedNote.forEach(item => {
+        if(item.id == id){
+          this.note = item;
+        }
+      });
    }
  }
 };
